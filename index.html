@@ -1,0 +1,31 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.js Website</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Node.js Website</h1>
+    <div id="data"></div>
+
+    <script>
+      // Sử dụng Fetch API để gửi yêu cầu đến API của ứng dụng Node.js
+      fetch('/api/data')
+        .then((response) => response.json())
+        .then((data) => {
+          // Hiển thị dữ liệu nhận được lên trang web
+          document.getElementById('data').innerText = data.message;
+        })
+        .catch((error) => console.error('Error:', error));
+    </script>
+  </body>
+</html>
